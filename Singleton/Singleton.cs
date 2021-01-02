@@ -7,9 +7,9 @@ public class SingletonGameObject<T> : MonoBehaviour where T : Component
 {
     #region Static fields
 
-    // Singleton public instance.
-    public static T Instance;
-
+    // Singleton _instance.
+    private static T _instance;
+    
     #endregion
 
     #region Serialized fields
@@ -23,7 +23,24 @@ public class SingletonGameObject<T> : MonoBehaviour where T : Component
 
     #endregion
 
+    #region Properties
+
+    public static T Instance
+    {
+        get
+        {
+            if (_isQuitting)
+                return null;
+
+            return _instance;
+        }
+    }
+
+    #endregion
+
     #region Non-serialized fields
+
+    private static bool _isQuitting = false;
     #endregion
 
     #region Unity events
@@ -34,6 +51,11 @@ public class SingletonGameObject<T> : MonoBehaviour where T : Component
     {
         VerifySingletonPattern();
         CreateSingletonObject();
+    }
+
+    private void OnApplicationQuit() 
+    {
+        _isQuitting = true;
     }
 
     #endregion
@@ -48,22 +70,22 @@ public class SingletonGameObject<T> : MonoBehaviour where T : Component
         if (!Application.isPlaying)
             return;
 
-        if (Instance != null)
+        if (_instance != null)
         {
-            string warning = "An additional singleton instance was created";
+            string warning = "An additional singleton _instance was created";
             warning += $" in {gameObject.name}. Destroying it now...";
             Debug.LogWarning(warning);
             Destroy(gameObject);
         }
         else
         {
-            if (Instance == null)
-                Instance = FindObjectOfType<T>();
+            if (_instance == null)
+                _instance = FindObjectOfType<T>();
 
-            if (Instance == null)
-                Instance = this as T;
+            if (_instance == null)
+                _instance = this as T;
 
-            if (Instance == null)
+            if (_instance == null)
             {
                 Debug.LogWarning("Singleton object not found.");
             }
@@ -75,11 +97,11 @@ public class SingletonGameObject<T> : MonoBehaviour where T : Component
         if (!_createObjectIfNotInScene)
             return;
 
-        if (Instance != null)
+        if (_instance != null)
             return;
 
         GameObject singletonObject = new GameObject();
-        Instance = singletonObject.AddComponent<T>();
+        _instance = singletonObject.AddComponent<T>();
         Debug.Log("Singleton object created.");
     }
 
@@ -88,7 +110,7 @@ public class SingletonGameObject<T> : MonoBehaviour where T : Component
         if (!_persistBetweenScenes)
             return;
 
-        if (Instance == null)
+        if (_instance == null)
             return;
 
         DontDestroyOnLoad(gameObject);
