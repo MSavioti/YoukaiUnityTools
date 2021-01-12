@@ -4,6 +4,7 @@ using System.IO;
 
 namespace YoukaiFox.Tools
 {
+    // Author: github.com/LotteMakesStuff
     public static class CustomInspectorCreator
     {
         [MenuItem("Assets/Create/Custom Inspector", priority = 81)]
