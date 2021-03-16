@@ -1,8 +1,9 @@
 using UnityEngine;
 
-namespace YoukaiFox.Tools
+namespace YoukaiFox.Tools.Helpers
 {
     /// <summary>
+    /// Credits to github.com/LotteMakesStuff for putting it together.
     /// Multiple use color class based on UnityEngine.Color.
     /// Color nomenclature by CSS3: http://www.w3.org/TR/css3-color/#svg-color
     /// </summary>
@@ -153,6 +154,8 @@ namespace YoukaiFox.Tools
 
         #endregion
     
+        #region Methods
+        
         // Origin: Stack Overflow
         /// <summary>
         /// Decides which color from black or white which
@@ -168,5 +171,7 @@ namespace YoukaiFox.Tools
 
             return Color.white;
         }
+
+        #endregion
     }
 }

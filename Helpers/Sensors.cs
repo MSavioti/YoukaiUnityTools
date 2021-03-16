@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace YoukaiFox.Tools
+namespace YoukaiFox.Tools.Helpers
 {
     public static class Sensors 
     {
