@@ -144,6 +144,10 @@ namespace YoukaiFox.Tools.GooglePlay
             return true;
         }
 
+        /// <summary>
+        /// Calls the native UI listing the achievements present in the game.
+        /// </summary>
+        /// <returns>Returns true is successful.</returns>
         public bool ShowAchievements()
         {
             if (_signInStatus != SignInStatus.Success)
@@ -165,11 +169,15 @@ namespace YoukaiFox.Tools.GooglePlay
             return success;
         }
 
+        /// <summary>
+        /// Calls the native leaderboards UI.
+        /// </summary>
+        /// <returns>Returns true is successful.</returns>
         public bool ShowLeaderboards()
         {
             if (_signInStatus != SignInStatus.Success)
                 return false;
-                
+
             var success = true;
 
             try
