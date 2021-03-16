@@ -62,5 +62,15 @@ namespace YoukaiFox.Tools
                     throw new System.ArgumentOutOfRangeException();
             }
         }
+
+        public static bool IsHorizontal(this Direction self)
+        {
+            return (self == Direction.Right) || (self == Direction.Left);
+        }
+
+        public static bool IsVertical(this Direction self)
+        {
+            return (self == Direction.Up) || (self == Direction.Down);
+        }
     }
 }
