@@ -28,6 +28,12 @@ namespace YoukaiFox.Tools.GooglePlay
 
         #endregion
 
+        #region Properties
+
+        public SignInStatus CurrentSignInStatus => _signInStatus;
+
+        #endregion
+
         #region Custom types
         #endregion
 
@@ -140,6 +146,9 @@ namespace YoukaiFox.Tools.GooglePlay
 
         public bool ShowAchievements()
         {
+            if (_signInStatus != SignInStatus.Success)
+                return false;
+
             var success = true;
 
             try
@@ -158,6 +167,9 @@ namespace YoukaiFox.Tools.GooglePlay
 
         public bool ShowLeaderboards()
         {
+            if (_signInStatus != SignInStatus.Success)
+                return false;
+                
             var success = true;
 
             try
