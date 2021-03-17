@@ -65,7 +65,7 @@ namespace YoukaiFox.Tools.GooglePlay
         /// <summary>
         /// Used for sign in button.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The resulting sign in status.</returns>
         public SignInStatus SignIn()
         {
             PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptAlways, (result) => 
@@ -80,7 +80,7 @@ namespace YoukaiFox.Tools.GooglePlay
         /// Unlock achievement based on the id <paramref name="achievementId"/>.
         /// </summary>
         /// <param name="achievementId">ID shown on achievements option inside Google Play Console.</param>
-        /// <returns></returns>
+        /// <returns>Returns true is successful.</returns>
         public bool Achieve(string achievementId)
         {
             if (_signInStatus != SignInStatus.Success)
@@ -115,7 +115,7 @@ namespace YoukaiFox.Tools.GooglePlay
         /// </summary>
         /// <param name="achievementId">ID shown on achievements option inside Google Play Console.</param>
         /// <param name="increment">Achievement's progression, ranging from 0 to 100.</param>
-        /// <returns></returns>
+        /// <returns>Returns true is successful.</returns>
         public bool AchieveIncremental(string achievementId, float increment)
         {
             if (_signInStatus != SignInStatus.Success)
@@ -148,9 +148,9 @@ namespace YoukaiFox.Tools.GooglePlay
         /// Send a score to leaderboard with the provided id <paramref name="leaderboardId"/>.
         /// (Remember that the platform will ignore any score which is not a high score automatically.)
         /// </summary>
-        /// <param name="leaderboardId"></param>
-        /// <param name="score"></param>
-        /// <returns></returns>
+        /// <param name="leaderboardId">Leaderboard ID displayed in the Google Play Console.</param>
+        /// <param name="score">New score to send to the server.</param>
+        /// <returns>Returns true is successful.</returns>
         public bool SendScoreToLeaderboard(string leaderboardId, float score)
         {
             var success = true;
@@ -170,10 +170,10 @@ namespace YoukaiFox.Tools.GooglePlay
         /// associates the score with a metadata <paramref name="metaDataTag"/>.
         /// (Remember that the platform will ignore any score which is not a high score automatically.)
         /// </summary>
-        /// <param name="leaderboardId"></param>
-        /// <param name="score"></param>
-        /// <param name="metaDataTag"></param>
-        /// <returns></returns>
+        /// <param name="leaderboardId">Leaderboard ID displayed in the Google Play Console.</param>
+        /// <param name="score">New score to send to the server.</param>
+        /// <param name="metaDataTag">Metadata to add, like a tag explaining the reason for the score.</param>
+        /// <returns>Returns true is successful.</returns>
         public bool SendScoreToLeaderboard(string leaderboardId, float score, string metaDataTag)
         {
             var success = true;
