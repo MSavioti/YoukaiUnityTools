@@ -159,7 +159,7 @@ namespace YoukaiFox.Tools.GooglePlay
             Social.ReportScore(convertedScore, leaderboardId, (bool success) => 
             {
                 if (!success)
-                    success = false;
+                    sent = false;
             });
 
             return sent;
@@ -182,7 +182,7 @@ namespace YoukaiFox.Tools.GooglePlay
             PlayGamesPlatform.Instance.ReportScore(convertedScore, leaderboardId, metaDataTag, (bool success) => 
             {
                 if (!success)
-                    success = false;
+                    sent = false;
             });
 
             return sent;
