@@ -145,6 +145,50 @@ namespace YoukaiFox.Tools.GooglePlay
         }
 
         /// <summary>
+        /// Send a score to leaderboard with the provided id <paramref name="leaderboardId"/>.
+        /// (Remember that the platform will ignore any score which is not a high score automatically.)
+        /// </summary>
+        /// <param name="leaderboardId"></param>
+        /// <param name="score"></param>
+        /// <returns></returns>
+        public bool SendScoreToLeaderboard(string leaderboardId, float score)
+        {
+            var success = true;
+            var convertedScore = (long) score;
+
+            Social.ReportScore(convertedScore, leaderboardId, (success) => 
+            {
+                if (!success)
+                    success = false;
+            });
+
+            return success;
+        }
+
+        /// <summary>
+        /// Send a score to leaderboard with the provided id <paramref name="leaderboardId"/> and
+        /// associates the score with a metadata <paramref name="metaDataTag"/>.
+        /// (Remember that the platform will ignore any score which is not a high score automatically.)
+        /// </summary>
+        /// <param name="leaderboardId"></param>
+        /// <param name="score"></param>
+        /// <param name="metaDataTag"></param>
+        /// <returns></returns>
+        public bool SendScoreToLeaderboard(string leaderboardId, float score, string metaDataTag)
+        {
+            var success = true;
+            var convertedScore = (long) score;
+
+            PlayGamesPlatform.Instance.ReportScore(convertedScore, leaderboardId, metaDataTag, (success) => 
+            {
+                if (!success)
+                    success = false;
+            });
+
+            return success;
+        }
+
+        /// <summary>
         /// Calls the native UI listing the achievements present in the game.
         /// </summary>
         /// <returns>Returns true is successful.</returns>
