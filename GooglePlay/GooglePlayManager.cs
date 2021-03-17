@@ -153,16 +153,16 @@ namespace YoukaiFox.Tools.GooglePlay
         /// <returns>Returns true is successful.</returns>
         public bool SendScoreToLeaderboard(string leaderboardId, float score)
         {
-            var success = true;
+            var sent = true;
             var convertedScore = (long) score;
 
-            Social.ReportScore(convertedScore, leaderboardId, (success) => 
+            Social.ReportScore(convertedScore, leaderboardId, (bool success) => 
             {
                 if (!success)
                     success = false;
             });
 
-            return success;
+            return sent;
         }
 
         /// <summary>
@@ -176,16 +176,16 @@ namespace YoukaiFox.Tools.GooglePlay
         /// <returns>Returns true is successful.</returns>
         public bool SendScoreToLeaderboard(string leaderboardId, float score, string metaDataTag)
         {
-            var success = true;
+            var sent = true;
             var convertedScore = (long) score;
 
-            PlayGamesPlatform.Instance.ReportScore(convertedScore, leaderboardId, metaDataTag, (success) => 
+            PlayGamesPlatform.Instance.ReportScore(convertedScore, leaderboardId, metaDataTag, (bool success) => 
             {
                 if (!success)
                     success = false;
             });
 
-            return success;
+            return sent;
         }
 
         /// <summary>
