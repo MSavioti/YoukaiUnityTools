@@ -2,7 +2,7 @@
 
 ## `Custom inspector creator`  
 
-With the file `CustomInspectorCreator.cs`, made by [LotteMakesStuff](github.com/LotteMakesStuff), 
+With the file `CustomInspectorCreator.cs`, made by [LotteMakesStuff](github.com/LotteMakesStuff),  
 an option for Custom Editor will be shown on your context menu.  
 
 ![Context menu preview](https://gist.githubusercontent.com/LotteMakesStuff/cb63e4e25e5dfdda19a95380e9c03436/raw/426eaa24df0dbddeb2577d761b90f41c77c2fbac/example.png)
