@@ -20,4 +20,4 @@ You will find a file named:
 Change the content of this file with content of any file under *MonobehaviourTemplates*
 and save, to change the standard Monobehaviour script template when creating new scripts.  
 
-When using the *NamespaceTemplate*, the script `CustomInspectorCreator.cs` will exchange `#PROJECTNAME#` for the project's name.
+When using the *NamespaceTemplate*, the script `CustomInspectorCreator.cs` will exchange `#PROJECTNAME#` for the project's name, simulating the act of moving the class to a namespace.
