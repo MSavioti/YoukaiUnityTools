@@ -1,0 +1,28 @@
+using UnityEngine;
+
+public class #SCRIPTNAME# : MonoBehaviour
+{
+    #region Actions
+    #endregion
+
+    #region Serialized fields
+    #endregion
+
+    #region Non-serialized fields
+    #endregion
+
+    #region Constant fields
+    #endregion
+
+    #region Unity events
+    #endregion
+
+    #region Public methods
+    #endregion
+
+    #region Protected methods
+    #endregion
+
+    #region Private methods
+    #endregion    
+}
