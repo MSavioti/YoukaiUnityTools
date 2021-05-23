@@ -195,7 +195,9 @@ namespace YoukaiFox.Tools.GooglePlay
         public bool ShowAchievements()
         {
             if (_signInStatus != SignInStatus.Success)
+            {
                 return false;
+            }
 
             var success = true;
 
