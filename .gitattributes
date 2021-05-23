@@ -1,0 +1,10 @@
+# Auto detect text files and perform LF normalization
+*                 text=auto
+
+*.cs text diff=csharp
+
+* linguist-vendored
+*.cs linguist-vendored=false
+*.js linguist-vendored=true
+*.shader linguist-detectable=false
+*.cginc linguist-detectable=false
