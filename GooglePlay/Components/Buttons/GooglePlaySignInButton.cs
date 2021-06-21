@@ -21,7 +21,7 @@ namespace YoukaiFox.Tools.GooglePlay
 
         private void SignIn()
         {
-            base.Manager.SignIn();
+            GooglePlayManager.Instance.SignIn();
         }
 
         #endregion
