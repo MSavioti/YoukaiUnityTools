@@ -21,7 +21,7 @@ namespace YoukaiFox.Tools.GooglePlay
 
         private void ShowAchievements()
         {
-            base.Manager.ShowAchievements();
+            GooglePlayManager.Instance.ShowAchievements();
         }
 
         #endregion

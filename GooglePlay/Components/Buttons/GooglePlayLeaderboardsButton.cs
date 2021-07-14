@@ -21,7 +21,7 @@ namespace YoukaiFox.Tools.GooglePlay
 
         private void ShowLeaderboards()
         {
-            base.Manager.ShowLeaderboards();
+            GooglePlayManager.Instance.ShowLeaderboards();
         }
 
         #endregion
